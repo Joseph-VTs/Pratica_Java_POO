@@ -118,12 +118,71 @@ public class Controle_Pedidos {
         Controle_Pedidos.Produtos Produto_01 = new Controle_Pedidos.Produtos();
         System.out.println("\n------------------------------------------------------------------------------------------");
         Produto_01.setNome("Pastel");
-        Produto_01.setCodigo(01);
+        Produto_01.setCodigo(1);
         Produto_01.setPreco(5.50);
 
         // System.out.println(Produto_01.toString());
         System.out.println("Lista de Produtos: " +
                 "\n-> Nome:" + Produto_01.getNome() + " | Código: " + Produto_01.getCodigo() + " | Preço: " + Produto_01.getPreco());
+
+
+        System.out.println("\n------------------------------------------------------------------------------------------");
+        System.out.println("\nTentativa / Layout 1");
+        System.out.println("Produto" + "\tPreço" + "\tCódigo");
+        System.out.println(Produto_01.getNome() + "\t" + Produto_01.getPreco() + "\t" + Produto_01.getCodigo());
+        System.out.println("\nTentativa / Layout 2");
+        System.out.println("Produto: " + Produto_01.getNome() + "\t\t| Preço: " + Produto_01.getPreco() + "\t| Código: " + Produto_01.getCodigo());
+
+
+
+        System.out.println("\n------------------------------------------------------------------------------------------");
+        System.out.println("\nTentativa / Layout 3");
+        System.out.println(String.format(
+                "| Código: %02d | Preço: R$ %.2f | Produto: %-20s",
+                Produto_01.getCodigo(),
+                Produto_01.getPreco(),
+                Produto_01.getNome()
+        ));
+        System.out.println();
+
+        /*Explicação dos formatos
+            %-20s: String com no mínimo 20 caracteres, alinhada à esquerda.
+            %02d: Inteiro com 2 dígitos, preenchido com zero à esquerda se necessário.
+            %.2f: Número decimal com 2 casas após a vírgula.
+        */
+
+
+
+        System.out.println("\n--------------------------------------------------------------------------------");
+        System.out.println("Tentativa / Layout 4\n");
+        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println(String.format("| %-4s | %-11s | %-20s |", "Cod", "Preço", "Produto"));
+        System.out.println("--------------------------------------------------------------------------------");
+
+        // Inserindo os Dados
+        System.out.println(String.format(
+                "| %04d | R$ %8.2f | %-20s |",
+                Produto_01.getCodigo(),
+                Produto_01.getPreco(),
+                Produto_01.getNome()
+        ));
+
+        System.out.println(String.format(
+                "| %04d | R$ %8.2f | %-20s |",
+                Produto_01.getCodigo(),
+                Produto_01.getPreco(),
+                Produto_01.getNome()
+        ));
+
+        Produto_01.setPreco(123.84);
+        System.out.println(String.format(
+                "| %04d | R$ %8.2f | %-20s |",
+                Produto_01.getCodigo(),
+                Produto_01.getPreco(),
+                Produto_01.getNome()
+        ));
+
+
     }
 }
 
