@@ -1,3 +1,5 @@
+package Testes;
+
 public class Sem_Get {
     // Atributos
     String Nome;
