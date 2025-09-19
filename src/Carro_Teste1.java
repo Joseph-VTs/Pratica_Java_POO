@@ -4,62 +4,58 @@ public class Carro_Teste1 {
     String Cor;
 
 
-
     // Métodos Construtores
     //Construtor 1
-    public Carro_Teste1(String Marca, String Cor){
+    public Carro_Teste1(String Marca, String Cor) {
         System.out.println("Chamando Construtor 1: Carro(String, String)");
         this.Marca = Marca;
-        this.Cor =Cor;
+        this.Cor = Cor;
     }
+
     //Construtor 2
-    public Carro_Teste1(String Marca){
+    public Carro_Teste1(String Marca) {
         System.out.println("Chamando Construtor 2: Carro(String)");
-        this.Marca =Marca;
+        this.Marca = Marca;
         this.Cor = "Branco";
     }
+
     //Construtor 3
-    public Carro_Teste1(){
+    public Carro_Teste1() {
         System.out.println("Carro de Fábrica Padrão");
         this.Marca = "Ford";
         this.Cor = "Branco";
     }
 
 
-
     // Métodos
-    public void Exibir_Detalhes(){
+    public void Exibir_Detalhes() {
         System.out.println("Marca: " + this.Marca + ", Cor: " + this.Cor);
     }
-}
 
-class Funcionarios{
-    // Atributos
-    private String Nome;
-    private int Idade;
 
-    // Métodos Construtores
-    public Funcionarios(String Nome, int Idade){
-        this.Nome = Nome;
-        this.Idade = Idade;
-    }
 
-    // Métodos
-    public void setNome(String nome_Alter) {
-        Nome = nome_Alter;
-    }
-    public String getNome() {
-        return Nome;
-    }
+    public static void main(String[] args) {
 
-    public void setIdade(int idade_Alter) {
-        Idade = idade_Alter;
-    }
-    public int getIdade() {
-        return Idade;
-    }
+        System.out.println("\nCriando o Primeiro Carro...");
+        Carro_Teste1 Car_1 = new Carro_Teste1("Ford", "Azul");
+        Car_1.Exibir_Detalhes(); // Saída: Marca: Ford, Cor: Azul
 
-    public void Fazer_Aniversario(){
-        Idade++;
+        System.out.println("\n--------------------------\n");
+
+        System.out.println("Criando o Segundo Carro...");
+        Carro_Teste1 Car_2 = new Carro_Teste1("Ford");
+        Car_2.Exibir_Detalhes(); // Saída: Marca: Ford, Cor: "Branco Default"
+
+        System.out.println("\n--------------------------\n");
+
+        System.out.println("Criando Carro Padrão");
+        Carro_Teste1 Car_Faber = new Carro_Teste1();
+        Car_Faber.Exibir_Detalhes();
+        Car_Faber.Cor = "Rosa";
+
+
+        System.out.println("\n--------------------------\nTeste 2");
+        System.out.println("Carro 1: " + Car_1);
+        System.out.println("Carro 2: " + Car_2);
     }
 }
